@@ -1,0 +1,24 @@
+.movie-card {
+  margin: 15px;
+  border: 1px solid #ccc;
+}
+
+.movie-card-image {
+  width: 100px;
+  height: auto;
+}
+
+.movie-card-button {
+  margin: 20px;
+}
+
+.movie-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.movie-card-container {
+  margin-left: 30px;
+  margin-top: 15px;
+}

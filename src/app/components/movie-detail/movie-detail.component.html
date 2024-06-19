@@ -1,0 +1,22 @@
+<div class="container" *ngIf="movie">
+    <div class="movie-detail-header">
+      <h1>{{ movie.title }}</h1>
+      <button mat-raised-button color="primary" [routerLink]="['/']">Back to list</button>
+    </div>
+
+    <button mat-raised-button color="accent" (click)="showDetails()">Show all details</button>
+
+    <mat-expansion-panel *ngIf="details">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Extra details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <img [src]="movie.image" alt="{{ movie.title }}" class="movie-image"/>
+      <p>Title: {{movie.title}}</p>
+      <p>Director: {{ movie.director }}</p>
+      <p>Producer: {{ movie.release_date }}</p>
+      <p>Release Date: {{ movie.release_date }}</p>
+      <p>Running time: {{movie.running_time}}</p>
+    </mat-expansion-panel>
+  </div>

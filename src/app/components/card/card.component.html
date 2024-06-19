@@ -1,0 +1,12 @@
+<mat-card class="movie-card" [routerLink]="['/movie', id]">
+    <div class="movie-card-container">
+        <mat-card-title>{{ title }}</mat-card-title>
+        <mat-card-content>
+            <img mat-card-image [src]="image" alt="{{ title }}" class="movie-card-image"/>
+            <p><strong>Director:</strong> {{ director }}</p>
+            <p><strong>Release Date:</strong> {{ releaseDate }}</p>
+            <p><strong>Running Time:</strong> {{ runningTime }} minutes</p>
+        </mat-card-content>
+    </div>
+    <button mat-button class="movie-card-button" [routerLink]="['/movie', id]">View Details</button>
+</mat-card>

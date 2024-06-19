@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="header">
+    <h1>Ghibli Movies</h1>
+    <div class="view-toggle-buttons">
+      <button mat-icon-button (click)="setView('table')" [color]="view === 'table' ? 'primary' : ''">
+        <mat-icon>view_list</mat-icon>
+      </button>
+      <button mat-icon-button (click)="setView('cards')" [color]="view === 'cards' ? 'primary' : ''">
+        <mat-icon>view_module</mat-icon>
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="loading" class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-container *ngIf="!loading"> 
+    <div [@fadeInOut]>
+      <ng-container *ngIf="!loading && view === 'table'">
+        <app-grid [movies]="movies"></app-grid>
+      </ng-container>
+      
+      <ng-container *ngIf="!loading && view === 'cards'">
+        <app-card *ngFor="let movie of movies"
+                  [title]="movie.title"
+                  [image]="movie.image"
+                  [director]="movie.director"
+                  [releaseDate]="movie.release_date"
+                  [runningTime]="movie.running_time"
+                  [id]="movie.id">
+        </app-card>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
