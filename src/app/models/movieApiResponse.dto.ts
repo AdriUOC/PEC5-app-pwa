@@ -1,3 +1,4 @@
+// Modelo para recibir los datos de la api
 export class MovieApiResponseDTO {
   id: string;
   title: string;
